@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="utf-8">
+    <title>مولد روابط رسائل واتساب السريعة</title>
+    <style>
+        body {
+            direction: rtl;
+            text-align: center;
+            padding-right: 5%;
+            font-family: sans-serif;
+        }
+
+        h1 {
+            color: #333333;
+            background: #FFFFFF;
+            text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        .counter-container {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            display: inline-block;
+            color: #333;
+        }
+        
+        .counter-highlight {
+            color: #25D366;
+            font-size: 24px;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 90%;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #dddddd;
+            text-align: right;
+            transition: background-color 0.4s ease;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        tr.sent-row td {
+            background-color: #d4edda !important;
+            border-color: #c3e6cb;
+        }
+
+        .preview-box {
+            white-space: pre-wrap;
+            background: #fdfdfd;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            max-width: 400px;
+            border: 1px dashed #ccc;
+        }
+
+        .create_btn {
+            color: #fff !important;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: #60a3bc;
+            padding: 10px;
+            border-radius: 50px;
+            display: inline-block;
+            border: none;
+            transition: all 0.4s ease 0s;
+            font-size: 25px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .create_btn:hover {
+            text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+            box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+        }
+
+        .send_btn {
+            background-color: #25D366;
+            color: white;
+            padding: 6px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .send_btn:hover {
+            background-color: #128C7E;
+        }
+
+        input[type="text"], textarea {
+            width: 80%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>مولد روابط رسائل واتساب السريعة</h1>
+
+<form id="messageForm">
+    <label for="message">الرسالة:</label><br>
+    <textarea id="message" name="message" placeholder="أدخل رسالتك (استخدم {name} للإشارة إلى الاسم، {teacher} للإشارة إلى اسم المعلم، {school} للإشارة إلى المكان والتوقيت، {teacherNumber} للإشارة إلى رقم المعلم، {first_meeting} للإشارة إلى اللقاء الأول)" rows="12" cols="50">🌿 السلام عليكم ورحمة الله وبركاته،
+
+📢 نعلمكم أن المركز القرآني - روّاد الغد للبنين - سيفتح أبوابه في الأسبوع القادم بإذن الله.
+
+👦 ابنكم *{name}* سيتعلم في مجموعة مع المدرّس *{teacher}*.
+📞 رقم هاتف المدرّس: {teacherNumber} 
+📍 المكان والوقت: {school} 
+🗓️ موعد اللقاء الأول: {first_meeting}
+
+🤲 نسأل الله لنا ولكم التيسير والسداد
+
+مع فائق الاحترام والتقدير، 
+مركز روّاد الغد للبنين</textarea><br><br>
+
+    <label for="phoneNumbers">أرقام الهواتف (رقم هاتف واحد في كل سطر):</label><br>
+    <textarea id="phoneNumbers" name="phoneNumbers" placeholder="أدخل أرقام الهواتف" rows="4" cols="30"></textarea><br><br>
+    
+    <label for="names">الأسماء (اسم واحد في كل سطر):</label><br>
+    <textarea id="names" name="names" placeholder="أدخل الأسماء" rows="4" cols="30"></textarea><br><br>
+
+    <label for="teacherName">اسم المعلم:</label><br>
+    <input type="text" id="teacherName" name="teacherName" placeholder="أدخل اسم المعلم، مثلا: محمد احمد محاميد"><br><br>
+
+    <label for="teacherNumber">رقم المعلم:</label><br>
+    <input type="text" id="teacherNumber" name="teacherNumber" placeholder="أدخل رقم المعلم، مثلا: 0512345678"><br><br>
+
+    <label for="schoolName">المكان والتوقيت:</label><br>
+    <input type="text" id="schoolName" name="schoolName" placeholder="أدخل المكان والتوقيت، مثلا: مسجد عمربن الخطاب - كل يوم ثلاثاء بعد صلاة العصر "><br><br>
+
+    <label for="firstMeeting">موعد اللقاء الأول:</label><br>
+    <input type="text" id="firstMeeting" name="firstMeeting" placeholder="أدخل موعد اللقاء الأول، مثلا: يوم الأحد القادم الساعة 4:00 عصراً"><br><br>
+
+    <button type="button" class="create_btn" onclick="generateLinks()">إنشاء روابط واتساب</button>
+    <button type="button" class="create_btn" onclick="copyLinks()">نسخ الروابط</button>
+    <input data-html2canvas-ignore="true" style="font-size: 18px;" id="return_back_form" type="button" class="create_btn" onclick="window.location.href='index.html'" value="عودة للصفحة الرئيسية" />
+</form>
+
+<div id="counterContainer" class="counter-container" style="display: none;">
+    الرسائل المرسلة: <span id="sentCount" class="counter-highlight">0</span> / <span id="totalCount">0</span>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>الرقم</th>
+            <th>رقم الهاتف</th>
+            <th>معاينة الرسالة</th>
+            <th>إجراء</th>
+        </tr>
+    </thead>
+    <tbody id="result"></tbody>
+</table>
+
+<script>
+var totalMessages = 0;
+var sentMessages = 0;
+
+function updateCounterDisplay() {
+    var counterDiv = document.getElementById('counterContainer');
+    if (totalMessages > 0) {
+        counterDiv.style.display = 'inline-block';
+        document.getElementById('sentCount').textContent = sentMessages;
+        document.getElementById('totalCount').textContent = totalMessages;
+    } else {
+        counterDiv.style.display = 'none';
+    }
+}
+
+function generateLinks() {
+    var message = document.getElementById('message').value.trim();
+    var phoneNumbers = document.getElementById('phoneNumbers').value.trim().split('\n');
+    var names = document.getElementById('names').value.trim().split('\n');
+    var teacherName = document.getElementById('teacherName').value.trim();
+    var schoolName = document.getElementById('schoolName').value.trim();
+    var teacherNumber = document.getElementById('teacherNumber').value.trim();
+    var firstMeeting = document.getElementById('firstMeeting').value.trim();
+    var resultBody = document.getElementById('result');
+    resultBody.innerHTML = ''; 
+
+    totalMessages = 0;
+    sentMessages = 0;
+
+    phoneNumbers.forEach(function(number, index) {
+        var cleanNumber = number.trim();
+        if (!cleanNumber) return; 
+
+        totalMessages++; 
+
+        var name = names[index] ? names[index].trim() : '';
+        
+        var personalizedMessage = message
+            .replace(/{name}/g, name)
+            .replace(/{teacher}/g, teacherName)
+            .replace(/{school}/g, schoolName)
+            .replace(/{teacherNumber}/g, teacherNumber)
+            .replace(/{first_meeting}/g, firstMeeting);
+
+        var encodedMessage = encodeURIComponent(personalizedMessage);
+        var cleanPhone = cleanNumber.replace(/\D/g, ''); 
+        var whatsappLink = 'https://wa.me/972' + cleanPhone + '?text=' + encodedMessage;
+
+        var row = resultBody.insertRow();
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+
+        cell1.innerHTML = '<span data-ignore-copy>' + totalMessages + '</span>';
+        cell1.style.textAlign = 'center';
+
+        cell2.textContent = cleanNumber;
+        cell2.style.textAlign = 'center';
+
+        var previewDiv = document.createElement('div');
+        previewDiv.className = 'preview-box';
+        previewDiv.textContent = personalizedMessage;
+        cell3.appendChild(previewDiv);
+
+        var sendLink = document.createElement('a');
+        sendLink.href = whatsappLink;
+        sendLink.target = '_blank';
+        sendLink.className = 'send_btn';
+        sendLink.textContent = 'إرسال 💬';
+        
+        sendLink.onclick = function() {
+            if (!row.classList.contains('sent-row')) {
+                row.classList.add('sent-row');
+                sentMessages++;
+                updateCounterDisplay();
+            }
+            resultBody.appendChild(row); 
+        };
+
+        cell4.appendChild(sendLink);
+        cell4.style.textAlign = 'center';
+        
+        row.setAttribute('data-link', whatsappLink);
+    });
+
+    updateCounterDisplay(); 
+}
+
+function copyLinks() {
+    var resultBody = document.getElementById('result');
+    var rows = resultBody.getElementsByTagName('tr');
+    var tempInput = document.createElement('textarea');
+    var copyText = '';
+
+    for (var i = 0; i < rows.length; i++) {
+        var link = rows[i].getAttribute('data-link');
+        if (link) {
+            copyText += link + '\n';
+        }
+    }
+
+    if (!copyText.trim()) {
+        alert('لا توجد روابط لنسخها. قم بإنشاء الروابط أولاً!');
+        return;
+    }
+
+    tempInput.value = copyText;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    navigator.clipboard.writeText(tempInput.value);
+    document.body.removeChild(tempInput);
+    alert('تم نسخ الروابط إلى الحافظة بنجاح!');
+}
+</script>
+<br><br>
+
+</body>
+</html>
